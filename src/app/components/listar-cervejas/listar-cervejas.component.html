@@ -1,6 +1,7 @@
 <div class="card">
     <div class="card-header">
         {{ titulo }} Total: {{ totalCervejas }}
+        <span class="fa fa-star" ></span>    
     </div>
     
     <div class="card-body">
@@ -35,6 +36,7 @@
           <th scope="col">
             <button class="btn btn-primary" (click)="mostrarImagens()">{{ showImage ? "Esconder" : "Mostrar" }}</button>
           </th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -48,6 +50,9 @@
           <td>{{ item.ranking }}</td>
           <td >
             <img [src]="item.foto" *ngIf="showImage"> 
+          </td>
+          <td >
+              <a [routerLink]="['/cerveja/', item.id]" >Detalhes</a>
           </td>
         </tr>       
       </tbody>
